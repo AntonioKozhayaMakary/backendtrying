@@ -6,7 +6,7 @@ const {
   getUserMessages,
   addMessageToUser,
   search
-} = require('../controllers/userController')
+} = require('../controllers/orderController')
 
 const router = express.Router()
 
