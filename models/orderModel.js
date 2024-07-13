@@ -6,7 +6,6 @@ const orderSchema = new Schema({
   order: {
     type: Array,
     required: true,
-    unique: true // Ensures that the order is unique
   }
 }, { timestamps: true });
 

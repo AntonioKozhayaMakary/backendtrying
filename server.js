@@ -2,9 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
-const userRoutes = require('./routes/users')
-const loginRoutes = require('./routes/login')
-const verifyRoutes = require('./routes/verify')
+const orderRoutes = require('./routes/orders')
 const cors = require('cors');
 
 
@@ -21,15 +19,13 @@ app.use((req, res, next) => {
 
 
 app.use(cors({
-  origin: "https://saroha.netlify.app/",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  origin: "*",
+  methods: "HEAD,PUT,PATCH,POST",
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 // routes
-app.use('/api/users', userRoutes)
-app.use('/api/login', loginRoutes)
-app.use('/api/verify', verifyRoutes)
+app.use('/api/orders', orderRoutes)
 
 
 // connect to db
